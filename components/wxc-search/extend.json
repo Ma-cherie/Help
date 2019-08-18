@@ -1,0 +1,87 @@
+{
+    "name": "wxc-search",
+    "author": "MinUI",
+    "icon": "placeholder.png",
+    "placeholder": "placeholder.png",
+    "height": 120,
+    "type": "section",
+    "events": [{
+        "name": "input",
+        "readableName": "当用户输入时"
+    },
+    {
+        "name": "confirm",
+        "readableName": "当点击搜索按钮时"
+    }
+    ],
+    "properties": [{
+        "name": "showIcon",
+        "readableName": "是否显示search图标",
+        "type": "Boolean",
+        "defaultValue": true
+    },
+    {
+        "name": "showClear",
+        "readableName": "是否显示清除按钮",
+        "type": "Boolean",
+        "defaultValue": true
+    },
+    {
+        "name": "iconColor",
+        "readableName": "search图标的颜色",
+        "type": "Color",
+        "defaultValue": "#07C160"
+    },
+    {
+        "name": "phColor",
+        "readableName": "placeholder颜色",
+        "type": "Color",
+        "defaultValue": "#BBBBBB"
+    },
+    {
+        "name": "color",
+        "readableName": "文字颜色",
+        "type": "Color",
+        "defaultValue": "#333333"
+    },
+    {
+        "name": "radius",
+        "readableName": "圆角半径",
+        "type": "Stepper",
+        "detail": "0:20:1",
+        "defaultValue": 6
+    },
+    {
+        "name": "placeholder",
+        "readableName": "PlaceHolder",
+        "type": "String",
+        "defaultValue": "搜索"
+    },
+    {
+        "name": "mode",
+        "readableName": "模式",
+        "type": "Enum",
+        "detail": "normal,static",
+        "defaultValue": "normal"
+    },
+    {
+        "name": "align",
+        "readableName": "对齐方式",
+        "type": "Enum",
+        "detail": "left,center",
+        "defaultValue": "left"
+    },
+    {
+        "name": "button",
+        "readableName": "搜索按钮文案",
+        "type": "String",
+        "defaultValue": "搜索"
+    },
+    {
+        "name": "btnColor",
+        "readableName": "搜索按钮文字颜色",
+        "type": "Color",
+        "defaultValue": "#07C160"
+    }
+    ]
+}

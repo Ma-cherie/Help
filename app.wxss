@@ -1,0 +1,17 @@
+/**app.wxss**/
+@import 'style/weui/weui.wxss';
+
+.container {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.button_default_hover_class {
+    background-color: rgba(0, 0, 0, 0.1);
+    opacity: 0.7;
+}
+
+.weui-cell {
+    background-color: #fff;
+}

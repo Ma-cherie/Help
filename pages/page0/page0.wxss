@@ -1,0 +1,137 @@
+page {
+    background-color: #FAFAFA;
+}
+
+
+#container14 {
+}#view51 {
+position: relative;
+    width: 100.0%;
+    height: 196.0rpx;
+
+
+}
+
+#image73 {
+position: absolute;
+    left: 64.26361rpx;
+    top: 33.36963rpx;
+    width: 125.0rpx;
+    height: 124.0rpx;
+border-radius: 999px;
+
+pointer-events: none;
+}
+
+#text98 {
+position: absolute;
+    overflow: hidden;
+    left: 251.45558rpx;
+    top: 33.36963rpx;
+    width: 296.0rpx;
+text-align: left;
+font-size: 48.0rpx;
+color: rgba(0,0,0,1.00);
+line-height: 1.5;-webkit-line-clamp: 1;-webkit-box-orient: vertical;word-break: break-all;
+display: -webkit-box;
+
+pointer-events: none;
+}
+
+#text99 {
+position: absolute;
+    overflow: hidden;
+    left: 266.06876rpx;
+    top: 108.73926rpx;
+    width: 172.0rpx;
+text-align: left;
+font-size: 24.0rpx;
+color: rgba(0,0,0,1.00);
+line-height: 1.5;-webkit-line-clamp: 1;-webkit-box-orient: vertical;word-break: break-all;
+display: -webkit-box;
+
+pointer-events: none;
+}
+
+
+#component3 {
+
+}
+#container17 {
+}#view55 {
+position: relative;
+    width: 100.0%;
+    height: 140.0rpx;
+
+
+}
+
+#text104 {
+position: absolute;
+    overflow: hidden;
+    left: 65.0rpx;
+    top: 30.0rpx;
+    width: 620.0rpx;
+text-align: left;
+font-size: 40.0rpx;
+    font-weight: bold;
+color: rgba(0,0,0,1.00);
+line-height: 1.5;-webkit-line-clamp: 1;-webkit-box-orient: vertical;word-break: break-all;
+display: -webkit-box;
+
+pointer-events: none;
+}
+
+
+#container19 {
+}#view57 {
+position: relative;
+    width: 100.0%;
+    height: 140.0rpx;
+
+
+}
+
+#text106 {
+position: absolute;
+    overflow: hidden;
+    left: 65.0rpx;
+    top: 30.0rpx;
+    width: 620.0rpx;
+text-align: left;
+font-size: 40.0rpx;
+    font-weight: bold;
+color: rgba(0,0,0,1.00);
+line-height: 1.5;-webkit-line-clamp: 1;-webkit-box-orient: vertical;word-break: break-all;
+display: -webkit-box;
+
+pointer-events: none;
+}
+
+
+#container21 {
+}#view59 {
+position: relative;
+    width: 100.0%;
+    height: 140.0rpx;
+
+
+}
+
+#text108 {
+position: absolute;
+    overflow: hidden;
+    left: 65.0rpx;
+    top: 30.0rpx;
+    width: 620.0rpx;
+text-align: left;
+font-size: 40.0rpx;
+    font-weight: bold;
+color: rgba(0,0,0,1.00);
+line-height: 1.5;-webkit-line-clamp: 1;-webkit-box-orient: vertical;word-break: break-all;
+display: -webkit-box;
+
+pointer-events: none;
+}
+
+

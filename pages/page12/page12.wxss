@@ -1,0 +1,68 @@
+page {
+    background-color: #FAFAFA;
+}
+
+
+#container10 {
+}.listItem3 {
+position: relative;
+    display: flex;
+    height: 240.0rpx;
+background-color: rgba(255,255,255,1.00);
+
+
+}
+.image66 {
+position: absolute;
+    left: 70.0rpx;
+    top: 50.0rpx;
+    width: 140.0rpx;
+    height: 140.0rpx;
+border-radius: 999px;
+
+pointer-events: none;
+}
+
+.text88 {
+position: absolute;
+    overflow: hidden;
+    left: 250.0rpx;
+    top: 50.0rpx;
+    width: 380.0rpx;
+    height: 60.0rpx;
+text-align: left;
+font-size: 32.0rpx;
+color: rgba(0,0,0,1.00);
+line-height: 1.5;-webkit-line-clamp: 1;-webkit-box-orient: vertical;word-break: break-all;
+display: -webkit-box;
+
+pointer-events: none;
+}
+
+.text89 {
+position: absolute;
+    overflow: hidden;
+    left: 250.0rpx;
+    top: 140.0rpx;
+    width: 380.0rpx;
+    height: 60.0rpx;
+text-align: left;
+font-size: 28.0rpx;
+color: rgba(85,85,85,1.00);
+line-height: 1.5;-webkit-line-clamp: 1;-webkit-box-orient: vertical;word-break: break-all;
+display: -webkit-box;
+
+pointer-events: none;
+}
+
+
+.list3-separator {
+height: 1.0rpx;
+border-top-style: solid;
+border-top-color: #d9d9d9;
+border-top-width: 1.0rpx;
+margin-left: 0.0rpx;
+margin-right: 0.0rpx;
+}
+
+

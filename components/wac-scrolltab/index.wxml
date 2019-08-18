@@ -1,0 +1,12 @@
+<scroll-view scroll-x="true" class="nav" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}"
+style="height:{{option.height}};line-height:{{option.height}};background:{{option.background}};font-size:{{option.fontSize}}"
+>
+    <block wx:for="{{navData}}" wx:for-index="idx" wx:for-item="navItem" wx:key="idx">
+    <view class="nav-item {{currentTab == idx ?'active':''}}" 
+    style="color:{{currentTab == idx ? option.activeColor:option.defaultColor}};width:{{option.fixed ? 100/(navData.length || 1) + '%' : '20%'}};"
+    data-current="{{idx}}" bindtap="switchNav">
+    <view>{{navItem.text}}</view>
+    <view wx:if="{{option.hasIndicator}}" class="nav-item-indicator {{currentTab == idx ?'active':''}} " style="background:{{currentTab == idx ? option.activeColor:option.defaultColor}}"></view>
+    </view>
+    </block>     
+</scroll-view>

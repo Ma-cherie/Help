@@ -1,0 +1,22 @@
+<view class='container'>
+<view id='{{container10.id}}' >
+<view wx:if="{{container10.state == 'state1'}}">
+<view id="{{list3.id}}" style='{{list3.styleString}}'>
+<block wx:for="{{list3.dataSource}}">    <view class='listItem3' >
+    <image class='image66' mode='aspectFill' src='' ></image> 
+    <text class='text88' >{{"xxx 怎么了你"}}</text>
+
+    <text class='text89' >{{"详细内容"}}</text>
+
+
+</view>
+<view wx:if="{{index < list3.dataSource.length - 1}}" class="list3-separator"></view>
+
+</block>
+</view>
+
+
+</view>
+</view>
+
+</view>

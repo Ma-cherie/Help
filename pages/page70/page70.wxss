@@ -1,0 +1,329 @@
+page {
+    background-color: #FAFAFA;
+}
+
+
+#container27 {
+}#view68 {
+position: relative;
+    width: 100.0%;
+    height: 200.0rpx;
+
+
+}
+
+#image80 {
+position: absolute;
+    left: 48.925503rpx;
+    top: 22.0rpx;
+    width: 156.0rpx;
+    height: 156.0rpx;
+border-radius: 999px;
+
+pointer-events: none;
+}
+
+#text126 {
+position: absolute;
+    overflow: hidden;
+    left: 266.40402rpx;
+    top: 12.0rpx;
+    width: 420.0rpx;
+text-align: left;
+font-size: 60.0rpx;
+color: rgba(0,0,0,1.00);
+line-height: 1.5;-webkit-line-clamp: 1;-webkit-box-orient: vertical;word-break: break-all;
+display: -webkit-box;
+
+pointer-events: none;
+}
+
+#text127 {
+position: absolute;
+    overflow: hidden;
+    left: 326.40402rpx;
+    top: 108.0rpx;
+    width: 300.0rpx;
+text-align: left;
+font-size: 32.0rpx;
+color: rgba(0,0,0,1.00);
+line-height: 1.5;-webkit-line-clamp: 1;-webkit-box-orient: vertical;word-break: break-all;
+display: -webkit-box;
+
+pointer-events: none;
+}
+
+#icon16 {
+align-self: center;
+    position: absolute;
+    left: 266.40402rpx;
+    top: 114.0rpx;
+    width: 48.0rpx;
+    height: 48.0rpx;
+pointer-events: none;
+}
+
+#container22 {
+}#view60 {
+position: relative;
+    width: 100.0%;
+    height: 664.0rpx;
+
+
+}
+
+#image74 {
+position: absolute;
+    left: 29.696276rpx;
+    top: 30.70487rpx;
+    width: 690.6074rpx;
+    height: 348.0rpx;
+
+pointer-events: none;
+}
+
+#text109 {
+position: absolute;
+    overflow: hidden;
+    left: 29.696276rpx;
+    top: 408.73926rpx;
+    width: 690.6074rpx;
+text-align: left;
+font-size: 40.0rpx;
+    font-weight: bold;
+color: rgba(0,0,0,1.00);
+line-height: 1.5;-webkit-line-clamp: 1;-webkit-box-orient: vertical;word-break: break-all;
+display: -webkit-box;
+
+pointer-events: none;
+}
+
+#text110 {
+position: absolute;
+    overflow: hidden;
+    left: 29.696276rpx;
+    top: 476.73926rpx;
+    width: 690.6074rpx;
+text-align: left;
+font-size: 28.0rpx;
+color: rgba(85,85,85,1.00);
+line-height: 1.5;-webkit-line-clamp: 3;-webkit-box-orient: vertical;word-break: break-all;
+display: -webkit-box;
+
+pointer-events: none;
+}
+
+
+#component2 {
+
+}
+#container55 {
+}#view99 {
+position: relative;
+    width: 100.0%;
+    height: 392.0rpx;
+
+
+}
+
+#image87 {
+position: absolute;
+    left: 31.232092rpx;
+    top: 36.61891rpx;
+    width: 116.0rpx;
+    height: 116.0rpx;
+border-radius: 999px;
+
+pointer-events: none;
+}
+
+#text168 {
+position: absolute;
+    overflow: hidden;
+    left: 189.9255rpx;
+    top: 32.0rpx;
+    width: 200.0rpx;
+text-align: left;
+font-size: 40.0rpx;
+color: rgba(0,0,0,1.00);
+line-height: 1.5;-webkit-line-clamp: 1;-webkit-box-orient: vertical;word-break: break-all;
+display: -webkit-box;
+
+pointer-events: none;
+}
+
+#text169 {
+position: absolute;
+    overflow: hidden;
+    left: 401.9255rpx;
+    top: 104.61891rpx;
+    width: 204.0rpx;
+text-align: left;
+font-size: 20.0rpx;
+color: rgba(0,0,0,1.00);
+line-height: 1.5;-webkit-line-clamp: 1;-webkit-box-orient: vertical;word-break: break-all;
+display: -webkit-box;
+
+pointer-events: none;
+}
+
+#text170 {
+position: absolute;
+    overflow: hidden;
+    left: 189.9255rpx;
+    top: 104.61891rpx;
+    width: 244.0rpx;
+text-align: left;
+font-size: 20.0rpx;
+color: rgba(0,0,0,1.00);
+line-height: 1.5;-webkit-line-clamp: 1;-webkit-box-orient: vertical;word-break: break-all;
+display: -webkit-box;
+
+pointer-events: none;
+}
+
+#text171 {
+position: absolute;
+    overflow: hidden;
+    left: 52.160458rpx;
+    top: 176.63611rpx;
+    width: 645.6791rpx;
+text-align: left;
+font-size: 28.0rpx;
+color: rgba(0,0,0,1.00);
+line-height: 1.5;-webkit-line-clamp: 3;-webkit-box-orient: vertical;word-break: break-all;
+display: -webkit-box;
+
+pointer-events: none;
+}
+
+#icon19 {
+align-self: center;
+    position: absolute;
+    left: 467.72208rpx;
+    top: 326.0rpx;
+    width: 48.0rpx;
+    height: 48.0rpx;
+pointer-events: none;
+}
+#text172 {
+position: absolute;
+    overflow: hidden;
+    left: 527.72205rpx;
+    top: 326.0rpx;
+    width: 164.0rpx;
+text-align: left;
+font-size: 24.0rpx;
+color: rgba(0,0,0,1.00);
+line-height: 1.5;-webkit-line-clamp: 1;-webkit-box-orient: vertical;word-break: break-all;
+display: -webkit-box;
+
+pointer-events: none;
+}
+
+
+#container56 {
+}#view100 {
+position: relative;
+    width: 100.0%;
+    height: 392.0rpx;
+
+
+}
+
+#image88 {
+position: absolute;
+    left: 31.232092rpx;
+    top: 36.61891rpx;
+    width: 116.0rpx;
+    height: 116.0rpx;
+border-radius: 999px;
+
+pointer-events: none;
+}
+
+#text173 {
+position: absolute;
+    overflow: hidden;
+    left: 189.9255rpx;
+    top: 32.0rpx;
+    width: 200.0rpx;
+text-align: left;
+font-size: 40.0rpx;
+color: rgba(0,0,0,1.00);
+line-height: 1.5;-webkit-line-clamp: 1;-webkit-box-orient: vertical;word-break: break-all;
+display: -webkit-box;
+
+pointer-events: none;
+}
+
+#text174 {
+position: absolute;
+    overflow: hidden;
+    left: 401.9255rpx;
+    top: 104.61891rpx;
+    width: 204.0rpx;
+text-align: left;
+font-size: 20.0rpx;
+color: rgba(0,0,0,1.00);
+line-height: 1.5;-webkit-line-clamp: 1;-webkit-box-orient: vertical;word-break: break-all;
+display: -webkit-box;
+
+pointer-events: none;
+}
+
+#text175 {
+position: absolute;
+    overflow: hidden;
+    left: 189.9255rpx;
+    top: 104.61891rpx;
+    width: 244.0rpx;
+text-align: left;
+font-size: 20.0rpx;
+color: rgba(0,0,0,1.00);
+line-height: 1.5;-webkit-line-clamp: 1;-webkit-box-orient: vertical;word-break: break-all;
+display: -webkit-box;
+
+pointer-events: none;
+}
+
+#text176 {
+position: absolute;
+    overflow: hidden;
+    left: 52.160458rpx;
+    top: 176.63611rpx;
+    width: 645.6791rpx;
+text-align: left;
+font-size: 28.0rpx;
+color: rgba(0,0,0,1.00);
+line-height: 1.5;-webkit-line-clamp: 3;-webkit-box-orient: vertical;word-break: break-all;
+display: -webkit-box;
+
+pointer-events: none;
+}
+
+#icon20 {
+align-self: center;
+    position: absolute;
+    left: 467.72208rpx;
+    top: 326.0rpx;
+    width: 48.0rpx;
+    height: 48.0rpx;
+pointer-events: none;
+}
+#text177 {
+position: absolute;
+    overflow: hidden;
+    left: 527.72205rpx;
+    top: 326.0rpx;
+    width: 164.0rpx;
+text-align: left;
+font-size: 24.0rpx;
+color: rgba(0,0,0,1.00);
+line-height: 1.5;-webkit-line-clamp: 1;-webkit-box-orient: vertical;word-break: break-all;
+display: -webkit-box;
+
+pointer-events: none;
+}
+
+

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "wxc-icon": "./icon"
+  },
+  "component": true
+}

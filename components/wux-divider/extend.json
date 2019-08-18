@@ -1,0 +1,35 @@
+{
+    "name": "wux-divider",
+    "author": "wux-weapp",
+    "icon": "icon.png",
+    "placeholder": "placeholder.png",
+    "type": "Section",
+    "height": 60,
+    "properties":[
+        {
+            "name": "position",
+            "readableName": "文字位置",
+            "type": "Enum",
+            "detail": "left,center,right",
+            "defaultValue": "center"
+        },
+        {
+            "name": "dashed",
+            "readableName": "是否是虚线",
+            "type": "Boolean",
+            "defaultValue": false
+        },
+        {
+            "name": "text",
+            "readableName": "文字",
+            "type": "String",
+            "defaultValue": "wux"
+        },
+        {
+            "name": "showText",
+            "readableName": "显示文字",
+            "type": "Boolean",
+            "defaultValue": false
+        }
+    ]
+}

@@ -1,0 +1,75 @@
+<view class='container'>
+<view id='{{container27.id}}' >
+<view wx:if="{{container27.state == 'state1'}}">
+<view id='{{view68.id}}' style='{{view68.styleString}}' >
+    <image id='{{image80.id}}' style='{{image80.styleString}}' mode='{{image80.mode}}' src='{{image80.src}}' ></image> 
+    <text id='{{text126.id}}' style='{{text126.styleString}}' >{{text126.value}}</text>
+
+    <text id='{{text127.id}}' style='{{text127.styleString}}' >{{text127.value}}</text>
+
+    <image id='{{icon16.id}}' src='{{icon16.src}}' style='{{icon16.styleString}}' ></image> 
+
+</view>
+
+</view>
+</view>
+
+<view id='{{container22.id}}' >
+<view wx:if="{{container22.state == 'state1'}}">
+<view id='{{view60.id}}' style='{{view60.styleString}}' >
+    <image id='{{image74.id}}' style='{{image74.styleString}}' mode='{{image74.mode}}' src='{{image74.src}}' ></image> 
+    <text id='{{text109.id}}' style='{{text109.styleString}}' >{{text109.value}}</text>
+
+    <text id='{{text110.id}}' style='{{text110.styleString}}' >{{text110.value}}</text>
+
+
+</view>
+
+</view>
+</view>
+
+<wux-divider id='{{component2.id}}' position="{{component2['position']}}"dashed="{{component2['dashed']}}"text="{{component2['text']}}"showText="{{component2['showText']}}">
+</wux-divider>
+<view id='{{container55.id}}' >
+<view wx:if="{{container55.state == 'state1'}}">
+<view id='{{view99.id}}' style='{{view99.styleString}}' >
+    <image id='{{image87.id}}' style='{{image87.styleString}}' mode='{{image87.mode}}' src='{{image87.src}}' ></image> 
+    <text id='{{text168.id}}' style='{{text168.styleString}}' >{{text168.value}}</text>
+
+    <text id='{{text169.id}}' style='{{text169.styleString}}' >{{text169.value}}</text>
+
+    <text id='{{text170.id}}' style='{{text170.styleString}}' >{{text170.value}}</text>
+
+    <text id='{{text171.id}}' style='{{text171.styleString}}' >{{text171.value}}</text>
+
+    <image id='{{icon19.id}}' src='{{icon19.src}}' style='{{icon19.styleString}}' ></image> 
+    <text id='{{text172.id}}' style='{{text172.styleString}}' >{{text172.value}}</text>
+
+
+</view>
+
+</view>
+</view>
+
+<view id='{{container56.id}}' >
+<view wx:if="{{container56.state == 'state1'}}">
+<view id='{{view100.id}}' style='{{view100.styleString}}' >
+    <image id='{{image88.id}}' style='{{image88.styleString}}' mode='{{image88.mode}}' src='{{image88.src}}' ></image> 
+    <text id='{{text173.id}}' style='{{text173.styleString}}' >{{text173.value}}</text>
+
+    <text id='{{text174.id}}' style='{{text174.styleString}}' >{{text174.value}}</text>
+
+    <text id='{{text175.id}}' style='{{text175.styleString}}' >{{text175.value}}</text>
+
+    <text id='{{text176.id}}' style='{{text176.styleString}}' >{{text176.value}}</text>
+
+    <image id='{{icon20.id}}' src='{{icon20.src}}' style='{{icon20.styleString}}' ></image> 
+    <text id='{{text177.id}}' style='{{text177.styleString}}' >{{text177.value}}</text>
+
+
+</view>
+
+</view>
+</view>
+
+</view>
