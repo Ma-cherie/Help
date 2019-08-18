@@ -1,38 +1,48 @@
+<!-- 首页 -->
 <view class='container'>
-<wxc-search id='{{component1.id}}' showIcon="{{component1['showIcon']}}"showClear="{{component1['showClear']}}"iconColor="{{component1['iconColor']}}"phColor="{{component1['phColor']}}"color="{{component1['color']}}"radius="{{component1['radius']}}"placeholder="{{component1['placeholder']}}"mode="{{component1['mode']}}"align="{{component1['align']}}"button="{{component1['button']}}"btnColor="{{component1['btnColor']}}">
-</wxc-search>
-<view class="weui-cell weui-cell_select" style='{{picker1.styleString}}'>
-<view class="weui-cell__hd weui-cell__hd_in-select-after">
-<view class="weui-label">{{picker1.title}}</view>
-</view>
-<view class="weui-cell__bd">
-<picker mode="region" value="{{picker1.value}}" bindchange='onPicker1Change'>
-<view class="weui-select weui-select_in-select-after">{{picker1.value[0]}}，{{picker1.value[1]}}，{{picker1.value[2]}}</view>
-</picker>
-</view>
-</view>
+  <!-- 搜索栏 -->
+  <!-- <wxc-search id='{{component1.id}}' showIcon="{{component1['showIcon']}}" showClear="{{component1['showClear']}}" iconColor="{{component1['iconColor']}}" phColor="{{component1['phColor']}}" color="{{component1['color']}}" radius="{{component1['radius']}}"
+    placeholder="{{component1['placeholder']}}" mode="{{component1['mode']}}" align="{{component1['align']}}" button="{{component1['button']}}" btnColor="{{component1['btnColor']}}">
+  </wxc-search> -->
+  
+  <!-- Vant搜索栏 -->
+  <van-search value="{{ value }}" placeholder="请输入搜索关键词" />
+
+  <!-- 地区选择器 -->
+  <view class="weui-cell weui-cell_select" style='{{picker1.styleString}}'>
+    <view class="weui-cell__hd weui-cell__hd_in-select-after">
+      <view class="weui-label">{{picker1.title}}</view>
+    </view>
+    <view class="weui-cell__bd">
+      <picker mode="region" value="{{picker1.value}}" bindchange='onPicker1Change'>
+        <view class="weui-select weui-select_in-select-after">{{picker1.value[0]}}，{{picker1.value[1]}}，{{picker1.value[2]}}</view>
+      </picker>
+    </view>
+  </view>
+
+  <!-- 导航scrollTab栏 -->
+  <wac-scrolltab id='{{scrolltab1.id}}' navData='{{scrolltab1.navData}}' option='{{scrolltab1.option}}' currentTab='{{scrolltab1.currentTab}}' bindscrollTabChange='onScrolltab1Change'>
+  </wac-scrolltab>
+  <!-- 导航栏对应内容区 -->
+  <view id='{{container57.id}}'>
+    <view wx:if="{{container57.state == 'state1'}}">
+      <view id="{{list4.id}}" style='{{list4.styleString}}'>
+        <block wx:for="{{list4.dataSource}}" wx:key="{{list4.dataSource}}" >
+          <view class='listItem4'>
+            <image class='image89' mode='aspectFill' src='{{item["img"]}}'></image>
+            <text class='text178'>{{item["title"]}}</text>
+
+            <text class='text179'>{{item["content"]}}</text>
 
 
-<wac-scrolltab id='{{scrolltab1.id}}' navData='{{scrolltab1.navData}}' option='{{scrolltab1.option}}' currentTab='{{scrolltab1.currentTab}}' bindscrollTabChange='onScrolltab1Change' >
-</wac-scrolltab>
-<view id='{{container57.id}}' >
-<view wx:if="{{container57.state == 'state1'}}">
-<view id="{{list4.id}}" style='{{list4.styleString}}'>
-<block wx:for="{{list4.dataSource}}">    <view class='listItem4' >
-    <image class='image89' mode='aspectFill' src='{{item["img"]}}' ></image> 
-    <text class='text178' >{{item["title"]}}</text>
+          </view>
+          <view wx:if="{{index < list4.dataSource.length - 1}}" class="list4-separator"></view>
 
-    <text class='text179' >{{item["content"]}}</text>
+        </block>
+      </view>
 
 
-</view>
-<view wx:if="{{index < list4.dataSource.length - 1}}" class="list4-separator"></view>
-
-</block>
-</view>
-
-
-</view>
-</view>
+    </view>
+  </view>
 
 </view>
