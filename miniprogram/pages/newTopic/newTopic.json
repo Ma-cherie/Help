@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "新问答",
+  "usingComponents": {
+    "van-field": "..\/..\/miniprogram_npm\/vant-weapp/field/index"
+  }
+}

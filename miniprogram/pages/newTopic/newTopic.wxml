@@ -1,0 +1,36 @@
+<!--miniprogram/pages/newTopic.wxml-->
+
+<!-- 标题和正文输入框 -->
+<van-cell-group>
+  <van-field
+    value="{{ title }}"
+    placeholder="加个标题嗷~"
+    border="{{ false }}"
+    bind:change="onTitleChange"
+  />
+  <van-field
+    value="{{ content }}"
+    type="textarea"
+    placeholder="写下你想说的，你想问的吧~"
+    autosize
+    border="{{ false }}"
+    bind:change="onContentChange"
+  />
+</van-cell-group>
+
+<!-- 添加图片 -->
+<view class="img-group">
+  <!-- 已添加的照片展示 -->
+  <block wx:for="{{photoArr}}" wx:key="{{item}}" >
+    <image class="photo" src="{{item}}" mode="aspectFill" bindtap="previewImg" data-idx="{{index}}"></image>
+  </block>
+  <!-- 按钮 -->
+  <image src="../../resources/svg/addPhoto.svg" 
+      class="add-photo-btn" bindtap="addPhoto"
+      wx:if="{{photoArr.length < 3}}">
+  </image>
+</view>
+
+
+<!-- 提交按钮 -->
+<button class="submit-btn">发布</button>

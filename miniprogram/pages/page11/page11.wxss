@@ -31,7 +31,7 @@ pointer-events: none;
 }
 
 .text178 {
-position: absolute;
+    position: absolute;
     overflow: hidden;
     left: 250.0rpx;
     top: 50.0rpx;
@@ -71,5 +71,61 @@ border-top-width: 1.0rpx;
 margin-left: 0.0rpx;
 margin-right: 0.0rpx;
 }
+/* 以上是自动生成的代码 */
 
-
+/* 以下是自己写的 */
+/* 帖子瀑布流 */
+.card-wrap{
+  width: 100%;
+  background-color: rgb(246, 246, 246);
+}
+.card{
+  background-color: #fff;
+  box-sizing: border-box;
+  width: 100%;
+  /* height: 300rpx; */
+  /* border: 1px solid black; */
+  padding: 20rpx 30rpx;
+  margin-bottom: 10rpx;
+}
+/* 帖子瀑布流 - 用户展示 */
+.user-show{
+  position: relative;
+}
+.user-avatar{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 100rpx;
+  margin-right: 20rpx;
+  display: inline-block;
+}
+.user-name{
+  position: absolute;
+}
+.time-place{
+  position: absolute;
+  top: 50rpx;
+}
+.content{
+  width: 90%;
+  /* height: 100rpx; */
+  margin-bottom: 10rpx;
+  /* border: 1px solid black; */
+}
+.card-img{
+  width: 160rpx;
+  height: 160rpx;
+  margin-right: 20rpx;
+}
+/* 新建帖子按钮 */
+.new-note-btn{
+  width: 125rpx;
+  height: 125rpx;
+  border-radius: 125rpx;
+  /* border: 1px solid #8296ff; */
+  z-index: 1000;
+  position: fixed;
+  right: 20rpx;
+  bottom: 20rpx;
+  /* box-shadow: 0rpx 0rpx 2rpx #333; */
+}

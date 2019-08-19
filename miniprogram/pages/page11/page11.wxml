@@ -4,7 +4,7 @@
   <!-- <wxc-search id='{{component1.id}}' showIcon="{{component1['showIcon']}}" showClear="{{component1['showClear']}}" iconColor="{{component1['iconColor']}}" phColor="{{component1['phColor']}}" color="{{component1['color']}}" radius="{{component1['radius']}}"
     placeholder="{{component1['placeholder']}}" mode="{{component1['mode']}}" align="{{component1['align']}}" button="{{component1['button']}}" btnColor="{{component1['btnColor']}}">
   </wxc-search> -->
-  
+
   <!-- Vant搜索栏 -->
   <van-search value="{{ value }}" placeholder="请输入搜索关键词" />
 
@@ -21,28 +21,54 @@
   </view>
 
   <!-- 导航scrollTab栏 -->
-  <wac-scrolltab id='{{scrolltab1.id}}' navData='{{scrolltab1.navData}}' option='{{scrolltab1.option}}' currentTab='{{scrolltab1.currentTab}}' bindscrollTabChange='onScrolltab1Change'>
-  </wac-scrolltab>
+  <!-- <wac-scrolltab id='{{scrolltab1.id}}' navData='{{scrolltab1.navData}}' option='{{scrolltab1.option}}' currentTab='{{scrolltab1.currentTab}}' bindscrollTabChange='onScrolltab1Change'>
+  </wac-scrolltab> -->
+  <van-tabs active="{{ active }}" bind:change="onTabChange" animated color="#8296ff">
+    <van-tab title="全部">
+  <!-- 帖子 瀑布流 -->
+  <view class="card-wrap">
+    <view class="card" wx:for="{{topicList}}" wx:key="item.id">
+      <view class="user-show">
+        <image class="user-avatar" mode='aspectFill' src='../../resources/img/avatar.jpg'></image>
+        <text class="user-name">{{item.userName}}</text>
+        <text class="time-place">{{item.time}} 发布于 {{item.location}}</text>
+      </view>
+      <view class="content">{{item.content}}</view>
+      <view class="img-wrap" wx:if="{{item.imgArr}}" wx:for="{{item.imgArr}}" wx:for-item="photo" wx:key="photo">
+        <image class="card-img" mode='aspectFill' src='{{photo}}'></image>
+      </view>
+      <view class="attach-bar"></view>
+    </view>
+  </view>
+
+    </van-tab>
+    <van-tab title="问答"></van-tab>
+    <van-tab title="求助"></van-tab>
+    <van-tab title="讨论"></van-tab>
+  </van-tabs>
+
+
   <!-- 导航栏对应内容区 -->
-  <view id='{{container57.id}}'>
+  <!-- <view id='{{container57.id}}'>
     <view wx:if="{{container57.state == 'state1'}}">
       <view id="{{list4.id}}" style='{{list4.styleString}}'>
         <block wx:for="{{list4.dataSource}}" wx:key="{{list4.dataSource}}" >
           <view class='listItem4'>
             <image class='image89' mode='aspectFill' src='{{item["img"]}}'></image>
             <text class='text178'>{{item["title"]}}</text>
-
             <text class='text179'>{{item["content"]}}</text>
-
-
           </view>
           <view wx:if="{{index < list4.dataSource.length - 1}}" class="list4-separator"></view>
-
         </block>
       </view>
-
-
     </view>
-  </view>
+  </view> -->
+
+ 
+
+
+  <!-- 新建帖子按钮 -->
+  <!-- <view class="new-note-btn"></view> -->
+  <image src="../../resources/svg/add.svg" class="new-note-btn" bindtap="toNewTopic"></image>
 
 </view>
