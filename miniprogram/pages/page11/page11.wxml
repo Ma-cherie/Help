@@ -44,7 +44,7 @@
     </van-tab>
     <van-tab title="问答"></van-tab>
     <van-tab title="求助"></van-tab>
-    <van-tab title="讨论"></van-tab>
+    <van-tab title="讨论"></van-tab> 
   </van-tabs>
 
 
