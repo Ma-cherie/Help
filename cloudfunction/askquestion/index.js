@@ -25,6 +25,7 @@ exports.main = async (event, context) => {
       db.collection('Question').add({
         data: {
           qid: random_qid,
+          uid: event.uid,
           title: event.title,
           content: event.content,
           location: event.location,

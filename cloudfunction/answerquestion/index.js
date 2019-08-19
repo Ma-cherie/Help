@@ -26,6 +26,7 @@ exports.main = async (event, context) => {
       db.collection('Answer').add({
         data: {
           aid: random_aid,
+          uid: event.uid,
           content: event.content,
           like: 0,
           location: event.location,
@@ -38,7 +39,9 @@ exports.main = async (event, context) => {
         data: {
           qid: event.qid,
           aid: random_aid,
-          uid: event.uid
+          uid: event.uid,
+          hostuid: event.hostuid,
+          date: new Date()
         }
       })
     } catch (err) {
