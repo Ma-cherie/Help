@@ -1,5 +1,6 @@
 {
-	"cloudfunction": "./",
+	"miniprogramRoot": "miniprogram/",
+	"cloudfunctionRoot": "cloudfunction/",
 	"description": "项目配置文件",
 	"packOptions": {
 		"ignore": []
@@ -32,7 +33,6 @@
 	"isGameTourist": false,
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
-	"cloudfunctionRoot": "cloudfunction/",
 	"condition": {
 		"search": {
 			"current": -1,
