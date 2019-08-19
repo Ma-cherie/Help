@@ -29,13 +29,13 @@
   <view class="card-wrap">
     <view class="card" wx:for="{{topicList}}" wx:key="item.id">
       <view class="user-show">
-        <image class="user-avatar" mode='aspectFill' src='../../resources/img/avatar.jpg'></image>
+        <image class="user-avatar" mode='aspectFill' src="{{item.avatar}}"></image>
         <text class="user-name">{{item.userName}}</text>
         <text class="time-place">{{item.time}} 发布于 {{item.location}}</text>
       </view>
       <view class="content">{{item.content}}</view>
-      <view class="img-wrap" wx:if="{{item.imgArr}}" wx:for="{{item.imgArr}}" wx:for-item="photo" wx:key="photo">
-        <image class="card-img" mode='aspectFill' src='{{photo}}'></image>
+      <view class="img-wrap" wx:if="{{item.imgArr}}" >
+        <image class="card-img" mode='aspectFill' wx:for="{{item.imgArr}}" wx:for-item="photo" wx:key="photo" src='{{photo}}'></image>
       </view>
       <view class="attach-bar"></view>
     </view>

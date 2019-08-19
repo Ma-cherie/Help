@@ -66,3 +66,39 @@ margin-right: 0.0rpx;
 }
 
 
+
+/* 以下是自己写的 */
+.msg-list{
+  width: 100%;
+}
+.msg-box{
+  box-sizing: border-box;
+  width: 100%;
+  height: 160rpx;
+  position: relative;
+  /* border: 1px solid black; */
+  border-bottom: 1px solid rgb(242, 242, 242);
+}
+.avatar{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 80rpx;
+  margin-top: 30rpx;
+  margin-left: 30rpx;
+}
+.user-name{
+  color: #8296ff;
+}
+.msg-type{
+  position: absolute;
+  top: 20rpx;
+  left: 130rpx;
+}
+.msg{
+  position: absolute;
+  top: 70rpx;
+  left: 130rpx;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}

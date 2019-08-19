@@ -18,11 +18,16 @@ Page({
   data: {
     topicList:[
       { id: "1",userName: "Lazy Bone", content: "Yooo.", time: "2019-6-6", location:"广州市天河区",
-        imgArr: ['../../resources/img/yourname.jpg']
+        imgArr: ['../../resources/img/yourname.jpg', '../../resources/img/yourname.jpg'], 
+        avatar: '../../resources/img/avatar.jpg'
       },
       {
-        id: "1", userName: "Fisher", content: "Yooo.", time: "2019-6-6", location: "广州市天河区",
-        imgArr: ['../../resources/img/yourname.jpg']
+        id: "1", userName: "Fisher", content: "Yooooooooo.", time: "2019-6-6", location: "广州市天河区",
+        imgArr: null, avatar: '../../resources/img/avatar2.jpg'
+      },
+      {
+        id: "1", userName: "Lazy Bone", content: "Yooo.", time: "2019-6-6", location: "广州市天河区",
+        imgArr: null, avatar: '../../resources/img/avatar.jpg'
       },
     ],
     //tab标签页

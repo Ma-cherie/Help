@@ -1,4 +1,4 @@
-<view class='container'>
+<!-- <view class='container'>
   <view id='{{container10.id}}'>
     <view wx:if="{{container10.state == 'state1'}}">
       <view id="{{list3.id}}" style='{{list3.styleString}}'>
@@ -6,18 +6,32 @@
           <view class='listItem3'>
             <image class='image66' mode='aspectFill' src=''></image>
             <text class='text88'>{{"xxx 怎么了你"}}</text>
-
             <text class='text89'>{{"详细内容"}}</text>
-
-
           </view>
           <view wx:if="{{index < list3.dataSource.length - 1}}" class="list3-separator"></view>
-
         </block>
       </view>
-
-
     </view>
   </view>
+</view> -->
 
+<!-- 消息页
+赞了你的评论、回复了你(回帖子,回评论)
+ -->
+<view class="msg-list">
+  <view class="msg-box">
+    <image class="avatar" src="../../resources/img/avatar.jpg"></image>
+    <text class="msg-type"><text class="user-name">Lazy Bone </text> 赞了你的评论</text>
+    <text class="msg">我也Yooo!</text>
+  </view>
+  <view class="msg-box">
+    <image class="avatar" src="../../resources/img/avatar2.jpg"></image>
+    <text class="msg-type"><text class="user-name">Fisher </text> 回复了你的评论</text>
+    <text class="msg">我也Yooo!</text>
+  </view>
+  <view class="msg-box">
+    <image class="avatar" src="../../resources/img/avatar3.jpg"></image>
+    <text class="msg-type"><text class="user-name">VIиco </text> 回复了你的问题</text>
+    <text class="msg">我也Yooo!</text>
+  </view>
 </view>

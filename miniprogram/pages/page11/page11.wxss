@@ -108,9 +108,14 @@ margin-right: 0.0rpx;
 }
 .content{
   width: 90%;
+  /* padding-left: 30rpx; */
+  min-height: 60rpx;
   /* height: 100rpx; */
   margin-bottom: 10rpx;
   /* border: 1px solid black; */
+}
+.img-wrap{
+  /* padding-left: 30rpx; */
 }
 .card-img{
   width: 160rpx;
@@ -125,7 +130,7 @@ margin-right: 0.0rpx;
   /* border: 1px solid #8296ff; */
   z-index: 1000;
   position: fixed;
-  right: 20rpx;
-  bottom: 20rpx;
+  right: 50rpx;
+  bottom: 70rpx;
   /* box-shadow: 0rpx 0rpx 2rpx #333; */
 }

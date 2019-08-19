@@ -1,28 +1,30 @@
 <view class='container'>
+
   <view id='{{container14.id}}'>
     <view wx:if="{{container14.state == 'state1'}}">
       <view id='{{view51.id}}' style='{{view51.styleString}}'>
-        <image id='{{image73.id}}' style='{{image73.styleString}}' mode='{{image73.mode}}' src='{{image73.src}}'></image>
+        <!-- <image id='{{image73.id}}' style='{{image73.styleString}}' mode='{{image73.mode}}' src='{{image73.src}}'></image>
         <text id='{{text98.id}}' style='{{text98.styleString}}'>{{text98.value}}</text>
-
-        <text id='{{text99.id}}' style='{{text99.styleString}}'>{{text99.value}}</text>
-
-
+        <text id='{{text99.id}}' style='{{text99.styleString}}'>{{text99.value}}</text> -->
+        <image id='{{image73.id}}' style='{{image73.styleString}}' mode='{{image73.mode}}' 
+        src='../../resources/img/avatar.jpg'></image>
+        <text id='{{text98.id}}' style='{{text98.styleString}}'>Lazy Bone</text>
+        <text id='{{text99.id}}' style='{{text99.styleString}}'>积分：100</text>
       </view>
-
     </view>
   </view>
 
-  <wux-divider id='{{component3.id}}' position="{{component3['position']}}" dashed="{{component3['dashed']}}" text="{{component3['text']}}" showText="{{component3['showText']}}">
-  </wux-divider>
+<!-- 分界线 -->
+  <!-- <wux-divider id='{{component3.id}}' position="{{component3['position']}}" dashed="{{component3['dashed']}}" text="{{component3['text']}}" showText="{{component3['showText']}}">
+  </wux-divider> -->
+  <view class="hr"></view>
+
+
   <view id='{{container17.id}}'>
     <view wx:if="{{container17.state == 'state1'}}">
       <view id='{{view55.id}}' style='{{view55.styleString}}'>
         <text id='{{text104.id}}' style='{{text104.styleString}}'>{{text104.value}}</text>
-
-
       </view>
-
     </view>
   </view>
 
@@ -30,10 +32,7 @@
     <view wx:if="{{container19.state == 'state1'}}">
       <view id='{{view57.id}}' style='{{view57.styleString}}'>
         <text id='{{text106.id}}' style='{{text106.styleString}}'>{{text106.value}}</text>
-
-
       </view>
-
     </view>
   </view>
 
@@ -41,10 +40,7 @@
     <view wx:if="{{container21.state == 'state1'}}">
       <view id='{{view59.id}}' style='{{view59.styleString}}'>
         <text id='{{text108.id}}' style='{{text108.styleString}}'>{{text108.value}}</text>
-
-
       </view>
-
     </view>
   </view>
 
