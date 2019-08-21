@@ -19,12 +19,12 @@
 赞了你的评论、回复了你(回帖子,回评论)
  -->
 <view class="msg-list">
-  <view class="msg-box">
-    <image class="avatar" src="../../resources/img/avatar.jpg"></image>
-    <text class="msg-type"><text class="user-name">Lazy Bone </text> 赞了你的评论</text>
-    <text class="msg">我也Yooo!</text>
+  <view class="msg-box" wx:for="{{msgList}}" wx:key="item.aid">
+    <image class="avatar" src="{{item.avatarUrl || '../../resources/img/avatar.jpg'}}"></image>
+    <text class="msg-type"><text class="user-name">{{item.nickName}}</text> 回答了你的问题</text>
+    <text class="msg">{{item.date}}</text>
   </view>
-  <view class="msg-box">
+  <!-- <view class="msg-box">
     <image class="avatar" src="../../resources/img/avatar2.jpg"></image>
     <text class="msg-type"><text class="user-name">Fisher </text> 回复了你的评论</text>
     <text class="msg">我也Yooo!</text>
@@ -33,5 +33,5 @@
     <image class="avatar" src="../../resources/img/avatar3.jpg"></image>
     <text class="msg-type"><text class="user-name">VIиco </text> 回复了你的问题</text>
     <text class="msg">我也Yooo!</text>
-  </view>
+  </view> -->
 </view>

@@ -6,9 +6,13 @@ Page({
    */
   data: {
     item: {},
+
     imageUrl: ['../../resources/img/avatar.jpg', '../../resources/img/avatar2.jpg', '../../resources/img/avatar3.jpg'],
-    comment: ""
+    comment: "",
     
+
+    answerList: null
+
   },
 
   // 预览照片
@@ -74,5 +78,22 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  // 加载回答
+  loadAnswer: function(qid) {
+    let that = this
+    wx.cloud.callFunction({
+      name: 'getAnswer',
+      data: {
+        qid: qid
+      },
+    })
+    .then(res => {
+      console.log(res)
+      that.setData({
+        answerList: res.result.data
+      })
+    })
   }
 })
