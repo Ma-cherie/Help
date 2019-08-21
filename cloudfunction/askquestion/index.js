@@ -22,7 +22,7 @@ exports.main = async (event, context) => {
   } else {
     try {
       random_qid = uuid.v1()
-      db.collection('Question').add({
+      return await db.collection('Question').add({
         data: {
           qid: random_qid,
           uid: event.uid,
@@ -43,10 +43,10 @@ exports.main = async (event, context) => {
         success: false
       }
     }
-    return {
-      qid: random_qid,
-      msg: '新建问题成功',
-      success: true
-    }
+    // return {
+    //   qid: random_qid,
+    //   msg: '新建问题成功',
+    //   success: true
+    // }
   }
 }

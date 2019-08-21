@@ -9,13 +9,14 @@ const db = cloud.database()
  * 根据地区获取问题：按时间最新排序，支持分页
  */
 exports.main = async (event, context) => {
-  // 用户校验
-  const res = await cloud.callFunction({
-    name: 'auth',
-    data: {
-      uid: event.uid
-    }
-  })
+  // 用户校验，目前先关闭
+  const res = true
+  // const res = await cloud.callFunction({
+  //   name: 'auth',
+  //   data: {
+  //     uid: event.uid
+  //   }
+  // })
   // 业务逻辑
   if (res) {
     try {
