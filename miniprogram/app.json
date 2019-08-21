@@ -1,7 +1,8 @@
 {
   "pages": [
+        "pages/index/index",
     "pages/topicDetail/topicDetail",
-    "pages/index/index",
+
     "pages/page0/page0",
     "pages/newTopic/newTopic",
     "pages/page12/page12",
