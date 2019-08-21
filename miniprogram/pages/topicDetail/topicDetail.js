@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    item: {}
+    item: {},
+    answerList: null
   },
 
   /**
@@ -62,5 +63,22 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  // 加载回答
+  loadAnswer: function(qid) {
+    let that = this
+    wx.cloud.callFunction({
+      name: 'getAnswer',
+      data: {
+        qid: qid
+      },
+    })
+    .then(res => {
+      console.log(res)
+      that.setData({
+        answerList: res.result.data
+      })
+    })
   }
 })

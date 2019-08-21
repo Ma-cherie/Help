@@ -16,7 +16,7 @@ Page({
      * 页面的初始数据
      */
     data: {
-        
+        msgList: null
     },
 
     /**
@@ -27,6 +27,8 @@ Page({
 
         this.setupDataSets();
         this.setupCharts();
+
+        this.loadMessage()
 
         if (options) {
             let str = [];
@@ -199,5 +201,21 @@ WAC.bindProxy(this,list3, "list3")
       * 自定义方法：
       *
       */
+
+    loadMessage: function() {
+      let that = this
+      wx.cloud.callFunction({
+        name: 'getMessage',
+        data: {
+          uid: wx.getStorageSync('uid')
+        }
+      })
+      .then(res => {
+        console.log(res)
+        that.setData({
+          msgList: res.result.data
+        })
+      })
+    }
      
 })
