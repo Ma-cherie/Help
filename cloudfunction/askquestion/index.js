@@ -24,7 +24,9 @@ exports.main = async (event, context) => {
       imageUrl: event.imageUrl,
       disable: 0,
       tag: event.tag,
-      date: new Date()
+      date: new Date(),
+      nickName: event.nickName,
+      avatarUrl: event.avatarUrl
     }
   })
   .then(res => {

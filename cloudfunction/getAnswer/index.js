@@ -10,30 +10,21 @@ const db = cloud.database()
  * 
  */
 exports.main = async (event, context) => {
-  // 获取回答ID列表
-  const answerIDList = await db.collection('Q2A').where({
+  return await db.collection('Answer').where({
     qid: event.qid
   })
-    .orderBy('date', 'desc')
-    .limit(event.aLimitNum)
-    .skip(event.aSkipNum)
-    .get()
-
-  // 获取回答具体内容
-  var answerList = []
-  for (var i = 0; i < answerIDList.length; i++) {
-    await db.collection('Answer').where({
-      aid: answerIDList[i].aid
-    })
-      .get()
-      .then(res => {
-        answerList.push(res)
-      })
-  }
-
-  return {
-    msg: '获取回答成功',
-    success: true,
-    answerList: answerList
-  }
+  .orderBy('date', 'desc')
+  .limit(event.aLimitNum)
+  .skip(event.aSkipNum)
+  .get()
+  .then(res => {
+    return res
+  })
+  .catch(err => {
+    console.error(err)
+    return {
+      msg: '获取回答失败',
+      success: false
+    }
+  })
 }

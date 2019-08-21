@@ -22,11 +22,14 @@ exports.main = async (event, context) => {
     data: {
       aid: random_aid,
       uid: event.uid,
+      qid: event.qid,
       content: event.content,
       like: 0,
       location: event.location,
       imageUrl: event.imageUrl,
-      date: new Date()
+      date: new Date(),
+      nickName: event.nickName,
+      avatarUrl: event.avatarUrl,
     }
   })
   .then(res => {
@@ -39,7 +42,9 @@ exports.main = async (event, context) => {
       aid: random_aid,
       uid: event.uid,
       hostuid: event.hostuid,
-      date: new Date()
+      date: new Date(),
+      nickName: event.nickName,
+      avatarUrl: event.avatarUrl
     }
   })
   .then(res => {
