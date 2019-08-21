@@ -42,6 +42,17 @@ Page({
       icon: 'none'
     });
   },
+  // 
+  toTopicDetail: function(){
+    wx.navigateTo({
+      url: '../topicDetail/topicDetail?qid=1',
+    })
+  },
+  toNewTopic: function () {
+    wx.navigateTo({
+      url: '../newTopic/newTopic',
+    })
+  },
 
   /**
    * 生命周期函数--监听页面加载
@@ -301,10 +312,6 @@ Page({
     }
   },
 
-  toNewTopic: function(){
-    wx.navigateTo({
-      url: '../newTopic/newTopic',
-    })
-  }
+  
 
 })

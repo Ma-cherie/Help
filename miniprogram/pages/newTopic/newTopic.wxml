@@ -1,5 +1,5 @@
 <!--miniprogram/pages/newTopic.wxml-->
-
+ 
 <!-- 标题和正文输入框 -->
 <van-cell-group>
   <van-field
@@ -33,4 +33,4 @@
 
 
 <!-- 提交按钮 -->
-<button class="submit-btn">发布</button>
+<button class="submit-btn" bindtap="submitTopic">发布</button>

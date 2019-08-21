@@ -1,13 +1,12 @@
 {
   "pages": [
-    "pages/page0/page0",
-    "pages/page11/page11",
+
+    "pages/index/index",
     "pages/newTopic/newTopic",
     "pages/page12/page12",
-
-
-    "pages/page70/page70"
-
+    "pages/page0/page0",
+    "pages/page70/page70",
+    "pages/topicDetail/topicDetail"
   ],
   "window": {
     "navigationBarTitleText": "快快问答",
@@ -23,7 +22,7 @@
       {
         "iconPath": "resources/tabBar/page11.png",
         "selectedIconPath": "resources/tabBar/page11_selected.png",
-        "pagePath": "pages/page11/page11",
+        "pagePath": "pages/index/index",
         "text": "快快问答"
       },
       {

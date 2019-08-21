@@ -27,7 +27,7 @@
     <van-tab title="全部">
   <!-- 帖子 瀑布流 -->
   <view class="card-wrap">
-    <view class="card" wx:for="{{topicList}}" wx:key="item.id">
+    <view class="card" wx:for="{{topicList}}" wx:key="item.id" bindtap="toTopicDetail">
       <view class="user-show">
         <image class="user-avatar" mode='aspectFill' src="{{item.avatar}}"></image>
         <text class="user-name">{{item.userName}}</text>
@@ -65,8 +65,6 @@
   </view> -->
 
  
-
-
   <!-- 新建帖子按钮 -->
   <!-- <view class="new-note-btn"></view> -->
   <image src="../../resources/svg/add.svg" class="new-note-btn" bindtap="toNewTopic"></image>

@@ -10,11 +10,11 @@ Page({
     photoArr: []
   },
 
-  onTitleChange: (event) => {
+  onTitleChange: function(event) {
     // console.log(event.detail);
     this.data.title = event.detail;
   },
-  onContentChange: event => {
+  onContentChange:function(event) {
     this.data.content = event.detail;
   },
   addPhoto: function(){
@@ -35,12 +35,45 @@ Page({
       urls: that.data.photoArr,
     })
   },
+  submitTopic: function(){
+    let content = this.data.content;
+    if(!content){
+      wx.showToast({
+        title: '内容不能为空',
+        icon: 'none'
+      });
+      return;
+    }
+    let uid = wx.getStorageSync('uid');
+    // wx.cloud.callFunction({
+    //   name: 'askquestion',
+    //   data: {
+    //     uid: uid
+    //   }
+    // }).then(console.log);
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    
   },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -62,7 +95,6 @@ Page({
   onHide: function () {
 
   },
-
   /**
    * 生命周期函数--监听页面卸载
    */
@@ -70,24 +102,6 @@ Page({
 
   },
 
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
 
-  },
 
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
 })
