@@ -17,6 +17,7 @@ exports.main = async (event, context) => {
   .orderBy('date', 'desc')
   .get()
   .then(res => {
+    console.log(event.uid)
     console.log(res)
     return res
   })

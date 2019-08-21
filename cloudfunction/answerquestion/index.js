@@ -18,7 +18,7 @@ exports.main = async (event, context) => {
     aid: random_aid
   }
   // 向Answer表中插入数据
-  db.collection('Answer').add({
+  await db.collection('Answer').add({
     data: {
       aid: random_aid,
       uid: event.uid,
@@ -36,7 +36,7 @@ exports.main = async (event, context) => {
     result.answerRes = res
   })
   // 向Q2A中间表插入数据
-  db.collection('Q2A').add({
+  await db.collection('Q2A').add({
     data: {
       qid: event.qid,
       aid: random_aid,
