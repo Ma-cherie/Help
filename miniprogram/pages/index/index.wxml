@@ -27,7 +27,8 @@
     <van-tab title="问答">
   <!-- 帖子 瀑布流 -->
   <view class="card-wrap">
-    <view class="card" wx:for="{{topicList}}" wx:key="item.id" bindtap="toTopicDetail">
+    <view class="card" wx:for="{{topicList}}" wx:key="item.id" wx:for-index="index"
+    bindtap="toTopicDetail" data-index="{{index}}">
       <view class="user-show">
         <image class="user-avatar" mode='aspectFill' src="{{item.avatarUrl || '../../resources/svg/user2.svg'}}"></image>
         <text class="user-name">{{item.nickName || "热心网友"}}</text>

@@ -32,9 +32,10 @@ Page({
     });
   },
   // 
-  toTopicDetail: function() {
+  toTopicDetail: function(e) {
+    // console.log("data-index:",e.currentTarget.dataset.index);
     wx.navigateTo({
-      url: '../topicDetail/topicDetail?qid=1',
+      url: '../topicDetail/topicDetail?topicIndex=' + e.currentTarget.dataset.index,
     })
   },
   toNewTopic: function() {
@@ -82,12 +83,13 @@ Page({
       }
     })
     .then(res => {
-      console.log(res);
+      // console.log(res);
       let topicList = res.result.data;
       for (let i = 0; i < topicList.length; i++) {
         topicList[i].date = new Date(topicList[i].date).toLocaleDateString();
       }
       that.setData({ topicList: topicList});
+      getApp().globalData.topicList = topicList;
     })
 
     this.setupViews();

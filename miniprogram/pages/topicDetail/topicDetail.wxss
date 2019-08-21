@@ -1,6 +1,17 @@
 /* miniprogram/pages/topicDetail/topicDetail.wxss */
+/* 上部问答详情 */
+.container{
+  width: 100%;
+  /* height: 1500rpx; */
+  background-color: #eee;
+}
 .topic-box{
-  
+  width: 100%;
+  box-sizing: border-box;
+  /* border: 1rpx solid #000000; */
+  padding: 10rpx 20rpx;
+  background-color: #fff;
+  margin-bottom: 10rpx;
 }
 .user-show{
   position: relative;
@@ -14,8 +25,67 @@
 }
 .user-name{
   position: absolute;
+  color: #8296ff;
 }
 .time-place{
   position: absolute;
   top: 50rpx;
+}
+.title{
+  width: 90%;
+  font-weight: bold;
+  font-size: 50rpx;
+}
+.content{
+  width: 95%;
+  word-break: break-all;
+}
+.imgsBox{
+  margin-top: 20rpx;
+}
+.imgsBox .img{
+  width: 200rpx;
+  height: 200rpx;
+  margin-right: 20rpx; 
+  display: inline-block;
+}
+
+.line{
+  width: 90%;
+  height: 1rpx;
+  border: 1rpx solid #eee;
+}
+
+
+/* 评论区 */
+.comment-bar{
+  width: 100%;
+  height: 60rpx;
+  border-top: 1rpx solid #eee;
+  border-bottom: 1rpx solid #eee;
+  background-color: #fff;
+  padding-left: 20rpx;
+  line-height: 60rpx;
+}
+.answer-box{
+  width: 100%;
+  height: 90rpx;
+  background-color: #fff;
+  padding: 20rpx 20rpx;
+}
+.answer-content{
+  font-size: 30rpx;
+  padding-bottom: 10rpx;
+}
+
+
+/* 评论输入框 */
+.comment-area{
+  position: absolute;
+  bottom: 0rpx;
+  width: 100%;
+  height: 100rpx;
+  padding-left: 20rpx;
+  z-index: 1000;
+  border-top: 1rpx solid #bfbfbf;
 }

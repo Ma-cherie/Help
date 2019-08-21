@@ -1,13 +1,34 @@
-<!--miniprogram/pages/topicDetail/topicDetail.wxml-->
-<view class="topic-box">
-  <view class="user-show">
-    <image class="user-avatar" mode='aspectFill' src="{{item.userInfo.avatarUrl || '../../resources/svg/user2.svg'}}"></image>
-    <text class="user-name">{{item.userInfo.nickname || "热心网友"}}</text>
-    <text class="time-place">{{item.date}} 发布于 {{item.location.city}}{{item.location.area}}</text>
+<!-- 问答页 -->
+<view class="container">
+  <view class="topic-box">
+    <view class="user-show">
+      <image class="user-avatar" mode='aspectFill' src="{{topic.avatarUrl || '../../resources/svg/user2.svg'}}"></image>
+      <text class="user-name">{{topic.nickName || "热心网友"}}</text>
+      <text class="time-place">{{topic.date}} 发布于 {{topic.location.city}}{{topic.location.area}}</text>
+    </view>
+    <view class="topic-show">
+      <view class="title">{{topic.title}}</view>
+      <view class="content">{{topic.content}}</view>
+      <view class="imgsBox">
+        <image class="img" wx:for="{{topic.imageUrl}}" src="{{item}}" 
+          wx:key="item" bindtap="previewImg" mode="aspectFill">
+        </image>
+      </view>
+    </view>
   </view>
-  <view class="topic-show">
-    <text class="title"></text>
-    <text class="content"></text>
+
+  <view class="comment-box">
+    <view class="comment-bar">回答 {{answerList.length}}</view>
+    <view class="answer-box" wx:for="{{answerList}}" wx:key="{{answerList.aid}}">
+      <image class="user-avatar" mode='aspectFill' src="{{item.avatarUrl || '../../resources/svg/user2.svg'}}"></image>
+      <text class="user-name">{{item.nickName || "热心网友"}}</text>
+      <text class="answer-content">{{item.content}}</text>
+    </view>
   </view>
+
+
+  <input type="text" confirm-type="send" value="{{comment}}" placeholder="写点评论" bindinput="getComment" class="comment-area" bindconfirm="sendComment">
+  </input>
+
+
 </view>
-<view class="comment-box"></view>
