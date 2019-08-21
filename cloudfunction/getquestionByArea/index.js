@@ -9,36 +9,23 @@ const db = cloud.database()
  * 根据地区获取问题：按时间最新排序，支持分页
  */
 exports.main = async (event, context) => {
-  // 用户校验，目前先关闭
-  const res = true
-  // const res = await cloud.callFunction({
-  //   name: 'auth',
-  //   data: {
-  //     uid: event.uid
-  //   }
-  // })
-  // 业务逻辑
-  if (res) {
-    try {
-      return await db.collection('Question').where({
-        location: event.location
-      })
-      .orderBy('date','desc')
-      .limit(event.qLimitNum)
-      .skip(event.qSkipNum)
-      .get()
-    } catch(err) {
-      console.error('根据地区获取问题失败')
-      console.error(err)
-      return {
-        msg: '获取失败',
-        success: false
-      }
-    }
-  } else {
+
+  return await db.collection('Question').where({
+    location: event.location
+  })
+  .orderBy('date', 'desc')
+  .limit(event.qLimitNum)
+  .skip(event.qSkipNum)
+  .get()
+  .then(res => {
+    return res
+  })
+  .catch(err => {
+    console.error(err)
     return {
-      msg: '用户校验失败',
+      msg: '获取问题失败',
       success: false
     }
-  }
+  })
+    
 }

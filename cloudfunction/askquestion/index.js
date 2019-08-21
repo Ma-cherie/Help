@@ -13,40 +13,29 @@ const db = cloud.database()
  * 返回：问题ID
  */
 exports.main = async (event, context) => {
-  const uid = cloud.getWXContext().OPENID
-  if (event.uid == undefined || event.uid != uid) {
+  random_qid = uuid.v1()
+  return await db.collection('Question').add({
+    data: {
+      qid: random_qid,
+      uid: event.uid,
+      title: event.title,
+      content: event.content,
+      location: event.location,
+      imageUrl: event.imageUrl,
+      disable: 0,
+      tag: event.tag,
+      date: new Date()
+    }
+  })
+  .then(res => {
     return {
-      msg: '用户验证失败',
-      success: false,
+      msg: '提问成功',
+      qid: random_qid
     }
-  } else {
-    try {
-      random_qid = uuid.v1()
-      return await db.collection('Question').add({
-        data: {
-          qid: random_qid,
-          uid: event.uid,
-          title: event.title,
-          content: event.content,
-          location: event.location,
-          imageUrl: event.imageUrl,
-          disable: 0,
-          tag: event.tag,
-          date: new Date()
-        }
-      })
-    } catch (err) {
-      console.error('新建问题出错')
-      console.error(err)
-      return {
-        msg: '新建问题失败',
-        success: false
-      }
-    }
-    // return {
-    //   qid: random_qid,
-    //   msg: '新建问题成功',
-    //   success: true
-    // }
-  }
+  })
+  .catch(err => {
+    console.error(err)
+    return err
+  })
+  
 }

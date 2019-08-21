@@ -10,51 +10,30 @@ const db = cloud.database()
  * 
  */
 exports.main = async (event, context) => {
-  // 用户校验
-  const res = await cloud.callFunction({
-    name: 'auth',
-    data: {
-      uid: event.uid
-    }
+  // 获取回答ID列表
+  const answerIDList = await db.collection('Q2A').where({
+    qid: event.qid
   })
+    .orderBy('date', 'desc')
+    .limit(event.aLimitNum)
+    .skip(event.aSkipNum)
+    .get()
 
-  // 业务逻辑
-  if (!res) {
-    return {
-      msg: '用户校验失败',
-      success: false
-    }
-  } else {
-    try {
-      // 获取回答ID列表
-      const answerIDList = await db.collection('Q2A').where({
-        qid: event.qid
+  // 获取回答具体内容
+  var answerList = []
+  for (var i = 0; i < answerIDList.length; i++) {
+    await db.collection('Answer').where({
+      aid: answerIDList[i].aid
+    })
+      .get()
+      .then(res => {
+        answerList.push(res)
       })
-        .orderBy('date', 'desc')
-        .limit(event.aLimitNum)
-        .skip(event.aSkipNum)
-        .get()
+  }
 
-      // 获取回答具体内容
-      var answerList = []
-      for (var i = 0; i < answerIDList.length; i++) {
-        answerList.push(await db.collection('Answer').where({
-          aid: answerIDList[i].aid
-        }).get())
-      }
-
-      return {
-        msg: '获取回答成功',
-        success: true,
-        answerList: answerList
-      }
-    } catch(err) {
-      console.error('获取回答出错')
-      console.error(err)
-      return {
-        msg: '获取回答失败',
-        success: false
-      }
-    }
+  return {
+    msg: '获取回答成功',
+    success: true,
+    answerList: answerList
   }
 }
