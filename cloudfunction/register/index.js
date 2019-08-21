@@ -17,7 +17,7 @@ exports.main = async (event, context) => {
     data: {
       uid: userinfo.OPENID,
       nickname: '热心网友',
-      avatarUrl: 'https://7465-test-s7zk5-1256658526.tcb.qcloud.la/my-image.jpg?sign=ad5e3b087656623c19bef3641f2892a6&t=1566138956',
+      avatarUrl: 'https://7465-test-38zv4-1300060502.tcb.qcloud.la/user2.svg?sign=f4ac124e9b525fa241419011e10fd081&t=1566381292',
       questions: [],
       answers: [],
       score: 0,
