@@ -5,9 +5,21 @@ Page({
    * 页面的初始数据
    */
   data: {
-    item: {}
+    item: {},
+    imageUrl: ['../../resources/img/avatar.jpg', '../../resources/img/avatar2.jpg', '../../resources/img/avatar3.jpg'],
+    comment: ""
+    
   },
 
+  // 预览照片
+  previewImg: function(){
+    wx.previewImage({
+      urls: that.data.imageUrl,
+    })
+  },
+  getComment: function(e){
+    this.setData({ comment: e.detail.value });
+  },
   /**
    * 生命周期函数--监听页面加载
    */

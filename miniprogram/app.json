@@ -1,13 +1,11 @@
 {
   "pages": [
-        "pages/index/index",
+    "pages/topicDetail/topicDetail",
+    "pages/index/index",
     "pages/page0/page0",
-
     "pages/newTopic/newTopic",
     "pages/page12/page12",
-
-    "pages/page70/page70",
-    "pages/topicDetail/topicDetail"
+    "pages/page70/page70"
   ],
   "window": {
     "navigationBarTitleText": "快快问答",

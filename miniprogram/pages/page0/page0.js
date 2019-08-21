@@ -65,9 +65,6 @@ Page({
         key: 'userInfo',
         data: app.globalData.userInfo,
       });
-      RequestTools.postRequest(config.updateUserInfo, data).then(function (res) {
-        console.log(res);
-      });
     } else {
       // 后续获取用户个人信息，比对变化
       for (let x in app.globalData.userInfo) {
@@ -76,9 +73,6 @@ Page({
           wx.setStorage({
             key: 'userInfo',
             data: app.globalData.userInfo,
-          });
-          RequestTools.postRequest(config.updateUserInfo, data).then(function (res) {
-            console.log(res);
           });
           break;
         }

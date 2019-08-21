@@ -1,13 +1,33 @@
-<!--miniprogram/pages/topicDetail/topicDetail.wxml-->
-<view class="topic-box">
-  <view class="user-show">
-    <image class="user-avatar" mode='aspectFill' src="{{item.userInfo.avatarUrl || '../../resources/svg/user2.svg'}}"></image>
-    <text class="user-name">{{item.userInfo.nickname || "热心网友"}}</text>
-    <text class="time-place">{{item.date}} 发布于 {{item.location.city}}{{item.location.area}}</text>
+<!-- 问答页 -->
+<view class="container">
+  <view class="topic-box">
+    <view class="user-show">
+      <image class="user-avatar" mode='aspectFill' src="{{item.userInfo.avatarUrl || '../../resources/svg/user2.svg'}}"></image>
+      <text class="user-name">{{item.userInfo.nickname || "热心网友"}}</text>
+      <text class="time-place">{{item.date}} 发布于 {{item.location.city}}{{item.location.area}}</text>
+    </view>
+    <view class="topic-show">
+      <view class="title">Yo.\n</view>
+      <view class="content">按时的口水的骄傲方法骄傲的司法局阿瑟东圣诞节覅使得飞机萨芬驾驶的飞机阿萨帝破2分电视剧咖啡碱阿斯利康.</view>
+      <view class="imgsBox">
+        <image class="img" wx:for="{{imageUrl}}" src="{{item}}" wx:key="item" bindtap="previewImg">
+        </image>
+      </view>
+    </view>
   </view>
-  <view class="topic-show">
-    <text class="title"></text>
-    <text class="content"></text>
+
+  <view class="comment-box">
+    <view class="comment-bar">评论</view>
+    <view class="answer-box">
+      <image class="user-avatar" mode='aspectFill' src="{{item.userInfo.avatarUrl || '../../resources/svg/user2.svg'}}"></image>
+      <text class="user-name">{{item.userInfo.nickname || "热心网友"}}</text>
+      <text class="answer-content">Yoooooooooooooooo.</text>
+    </view>
   </view>
+
+
+  <input type="text" confirm-type="send" value="{{comment}}" placeholder="写点评论" bindinput="getComment" class="comment-area">
+  </input>
+
+
 </view>
-<view class="comment-box"></view>
