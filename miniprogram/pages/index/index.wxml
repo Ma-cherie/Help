@@ -24,13 +24,13 @@
   <!-- <wac-scrolltab id='{{scrolltab1.id}}' navData='{{scrolltab1.navData}}' option='{{scrolltab1.option}}' currentTab='{{scrolltab1.currentTab}}' bindscrollTabChange='onScrolltab1Change'>
   </wac-scrolltab> -->
   <van-tabs active="{{ active }}" bind:change="onTabChange" animated color="#8296ff">
-    <van-tab title="全部">
+    <van-tab title="问答">
   <!-- 帖子 瀑布流 -->
   <view class="card-wrap">
     <view class="card" wx:for="{{topicList}}" wx:key="item.id" bindtap="toTopicDetail">
       <view class="user-show">
-        <image class="user-avatar" mode='aspectFill' src="{{item.userInfo.avatarUrl || '../../resources/svg/user2.svg'}}"></image>
-        <text class="user-name">{{item.userInfo.nickname || "热心网友"}}</text>
+        <image class="user-avatar" mode='aspectFill' src="{{item.avatarUrl || '../../resources/svg/user2.svg'}}"></image>
+        <text class="user-name">{{item.nickName || "热心网友"}}</text>
         <text class="time-place">{{item.date}} 发布于 {{item.location.city}}{{item.location.area}}</text>
       </view>
       <view class="content">{{item.title}} {{item.content}}</view>
@@ -42,9 +42,7 @@
   </view>
 
     </van-tab>
-    <van-tab title="问答"></van-tab>
     <van-tab title="求助"></van-tab>
-    <van-tab title="讨论"></van-tab> 
   </van-tabs>
 
 

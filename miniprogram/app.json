@@ -1,10 +1,11 @@
 {
   "pages": [
+        "pages/index/index",
+    "pages/page0/page0",
 
-    "pages/index/index",
     "pages/newTopic/newTopic",
     "pages/page12/page12",
-    "pages/page0/page0",
+
     "pages/page70/page70",
     "pages/topicDetail/topicDetail"
   ],
