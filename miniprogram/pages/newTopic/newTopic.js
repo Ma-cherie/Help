@@ -1,4 +1,5 @@
 // miniprogram/pages/newTopic.js
+const app = getApp();
 Page({
 
   /**
@@ -81,13 +82,17 @@ Page({
         var p = Promise.resolve();
         let photoArr = that.data.photoArr;
         let imgUrl = that.data.imageUrl;
+        let currTime = new Date()
         for (let i = 0; i < photoArr.length; i++) {
           let photo = photoArr[i];
           let fileNameArr = photo.split('.');
-          let fileName = fileNameArr[fileNameArr.length - 2] + "." + fileNameArr[fileNameArr.length - 1];
+          console.log(fileNameArr);
+          
+          let fileName = wx.getStorageSync('uid') + currTime.getTime() + "." + fileNameArr[fileNameArr.length - 1];
+          console.log(fileName);
           p = p.then(() => {
             return uploadSingleImg(fileName, photo).then(singleImgID => {
-              // console.log(singleImgID);
+              console.log(singleImgID);
               return imgUrl.push(singleImgID);
             });
           })
@@ -114,6 +119,8 @@ Page({
             city: '广州市',
             area: '天河区',
           },
+          nickName: app.globalData.userInfo.nickName,
+          avatarUrl: app.globalData.userInfo.avatarUrl,
         }
       }).then(res => {
         console.log(res);

@@ -17,7 +17,7 @@ Page({
    */
   data: {
     // topic列表
-    topicList:[],
+    topicList: [],
     //tab标签页
     active: 0,
     // 查询topic数目(分页用)
@@ -32,65 +32,63 @@ Page({
     });
   },
   // 
-  toTopicDetail: function(){
+  toTopicDetail: function() {
     wx.navigateTo({
       url: '../topicDetail/topicDetail?qid=1',
     })
   },
-  toNewTopic: function () {
-    wx.navigateTo({
-      url: '../newTopic/newTopic',
+  toNewTopic: function() {
+    // 获取用户授权
+    wx.getSetting({
+      success: function(res) {
+        console.log(res)
+        if (res.authSetting['scope.userInfo']) {
+          // 已授权去新建问答
+          wx.navigateTo({
+            url: '../newTopic/newTopic',
+          })
+        } else {
+          // 未授权
+          wx.showToast({
+            title: '请先授权登录',
+            icon: 'none'
+          });
+          setTimeout(function() {
+            wx.switchTab({
+              url: '../page0/page0',
+            })
+          }, 1000);
+        }
+      }
     })
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function  (options) {
+  onLoad: function(options) {
     const that = this;
-    // 获取首页问题
-    function getTopic (){
-      return  new Promise((resolve,reject) =>{
-        wx.cloud.callFunction({
-          name: 'getquestionByArea',
-          data: {
-            location: {
-              province: '广东省',
-              city: '广州市',
-              area: '天河区',
-            },
-            qSkipNum: that.data.qSkipNum,
-            qLimitNum: 10
-          },
-          success: res => {
-            resolve(res.result.data);
-          },
-          fail: res => {
-            reject("获取问题失败");
-          }
-        })
-      })
-    }
-    getTopic().then(topicList => {
-      console.log(topicList);
-      var p = Promise.resolve();
-      // 处理时间 并 获取用户信息
+    wx.cloud.callFunction({
+      name: 'getquestionByArea',
+      data: {
+        location: {
+          province: '广东省',
+          city: '广州市',
+          area: '天河区',
+        },
+        qSkipNum: that.data.qSkipNum,
+        qLimitNum: 20
+      }
+    })
+    .then(res => {
+      console.log(res);
+      let topicList = res.result.data;
       for (let i = 0; i < topicList.length; i++) {
         topicList[i].date = new Date(topicList[i].date).toLocaleDateString();
-        p = p.then(() => {
-          return wx.cloud.callFunction({
-            name: 'getUserInfo',
-            data: {
-              uid: topicList[i].uid
-            }
-          }).then(res => { topicList[i].userInfo = res.result.data[0]});
-        })
       }
-      p.then(() => { that.setData({ topicList: topicList })});
+      that.setData({ topicList: topicList});
     })
-
-
-
 
     this.setupViews();
     this.setupDataSets();
@@ -109,7 +107,9 @@ Page({
       this._onLoad(options);
     }
   },
+  onShow: function() {
 
+  },
   /**
    * 页面上拉触底事件的处理函数
    */
@@ -278,6 +278,6 @@ Page({
     }
   },
 
-  
+
 
 })
