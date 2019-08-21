@@ -12,25 +12,28 @@ const db = cloud.database()
  */
 exports.main = async (event, context) => {
   const userinfo = cloud.getWXContext()
-
+  
   try {
-    db.collection('User').add({
-      data: {
-        uid: userinfo.OPENID,
-        nickname: '热心网友',
-        avatarUrl: 'https://7465-test-s7zk5-1256658526.tcb.qcloud.la/my-image.jpg?sign=ad5e3b087656623c19bef3641f2892a6&t=1566138956',
-        questions: [],
-        answers: [],
-        score: 0,
-        registDate: new Date(),
-      }
-    })
+    return await {
+      uid: userinfo.OPENID,
+      res: db.collection('User').add({
+        data: {
+          uid: userinfo.OPENID,
+          nickname: '热心网友',
+          avatarUrl: 'https://7465-test-s7zk5-1256658526.tcb.qcloud.la/my-image.jpg?sign=ad5e3b087656623c19bef3641f2892a6&t=1566138956',
+          questions: [],
+          answers: [],
+          score: 0,
+          registDate: new Date(),
+        }
+      })
+    }
   } catch (err) {
     console.error('创建新用户信息出错')
     console.error(err)
   }
 
-  return {
-    uid: userinfo.OPENID
-  }
+  // return {
+  //   uid: userinfo.OPENID
+  // }
 }
