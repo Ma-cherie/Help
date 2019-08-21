@@ -69,28 +69,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    const that = this;
-    wx.cloud.callFunction({
-      name: 'getquestionByArea',
-      data: {
-        location: {
-          province: '广东省',
-          city: '广州市',
-          area: '天河区',
-        },
-        qSkipNum: that.data.qSkipNum,
-        qLimitNum: 20
-      }
-    })
-    .then(res => {
-      // console.log(res);
-      let topicList = res.result.data;
-      for (let i = 0; i < topicList.length; i++) {
-        topicList[i].date = new Date(topicList[i].date).toLocaleDateString();
-      }
-      that.setData({ topicList: topicList});
-      getApp().globalData.topicList = topicList;
-    })
 
     this.setupViews();
     this.setupDataSets();
@@ -110,7 +88,28 @@ Page({
     }
   },
   onShow: function() {
-
+    const that = this;
+    wx.cloud.callFunction({
+      name: 'getquestionByArea',
+      data: {
+        location: {
+          province: '广东省',
+          city: '广州市',
+          area: '天河区',
+        },
+        qSkipNum: that.data.qSkipNum,
+        qLimitNum: 20
+      }
+    })
+    .then(res => {
+      // console.log(res);
+      let topicList = res.result.data;
+      for (let i = 0; i < topicList.length; i++) {
+        topicList[i].date = new Date(topicList[i].date).toLocaleDateString();
+      }
+      that.setData({ topicList: topicList });
+      getApp().globalData.topicList = topicList;
+    })
   },
   /**
    * 页面上拉触底事件的处理函数
