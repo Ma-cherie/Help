@@ -1,5 +1,4 @@
 <!-- 问答页 -->
-<view class="container">
   <view class="topic-box">
     <view class="user-show">
       <image class="user-avatar" mode='aspectFill' src="{{topic.avatarUrl || '../../resources/svg/user2.svg'}}"></image>
@@ -30,5 +29,3 @@
   <input type="text" confirm-type="send" value="{{comment}}" placeholder="写点评论" bindinput="getComment" class="comment-area" bindconfirm="sendComment">
   </input>
 
-
-</view>

@@ -211,9 +211,13 @@ WAC.bindProxy(this,list3, "list3")
         }
       })
       .then(res => {
-        console.log(res)
+        // console.log(res);
+        let msgList = res.result.data;
+        for(let i=0 ; i<msgList.length; i++){
+          msgList[i].date = new Date(msgList[i].date).toLocaleDateString();
+        }
         that.setData({
-          msgList: res.result.data
+          msgList: msgList
         })
       })
     }

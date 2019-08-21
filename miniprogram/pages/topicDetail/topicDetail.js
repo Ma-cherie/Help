@@ -49,7 +49,7 @@ Page({
       },
     })
     .then(res => {
-      console.log(res);
+      // console.log(res);
       that.setData({
         answerList: res.result.data
       })
@@ -71,7 +71,7 @@ Page({
         hostuid: that.data.topic.uid
       }
     }).then(res => {
-      console.log(res);
+      // console.log(res);
       // 清空输入框
       that.setData({ comment: null });
       // 刷新回答区域
