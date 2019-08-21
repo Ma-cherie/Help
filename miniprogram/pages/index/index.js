@@ -16,23 +16,12 @@ Page({
    * 页面的初始数据
    */
   data: {
-    topicList:[
-      { id: "1",userName: "Lazy Bone", content: "Yooo.", time: "2019-6-6", location:"广州市天河区",
-        imgArr: ['../../resources/img/yourname.jpg', '../../resources/svg/user.svg'], 
-        avatar: '../../resources/svg/user2.svg'
-      },
-      {
-        id: "1", userName: "Fisher", content: "Yooooooooo.", time: "2019-6-6", location: "广州市天河区",
-        imgArr: null, avatar: '../../resources/img/avatar2.jpg'
-      },
-      {
-        id: "1", userName: "Lazy Bone", content: "Yooo.", time: "2019-6-6", location: "广州市天河区",
-        imgArr: null, avatar: '../../resources/img/avatar.jpg'
-      },
-    ],
+    // topic列表
+    topicList:[],
     //tab标签页
     active: 0,
-
+    // 查询topic数目(分页用)
+    qSkipNum: 0
 
   },
   // 中间标签页切换
@@ -57,12 +46,55 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
-    this.setupViews()
+  onLoad: function  (options) {
+    const that = this;
+    // 获取首页问题
+    function getTopic (){
+      return  new Promise((resolve,reject) =>{
+        wx.cloud.callFunction({
+          name: 'getquestionByArea',
+          data: {
+            location: {
+              province: '广东省',
+              city: '广州市',
+              area: '天河区',
+            },
+            qSkipNum: that.data.qSkipNum,
+            qLimitNum: 10
+          },
+          success: res => {
+            resolve(res.result.data);
+          },
+          fail: res => {
+            reject("获取问题失败");
+          }
+        })
+      })
+    }
+    getTopic().then(topicList => {
+      console.log(topicList);
+      var p = Promise.resolve();
+      // 处理时间 并 获取用户信息
+      for (let i = 0; i < topicList.length; i++) {
+        topicList[i].date = new Date(topicList[i].date).toLocaleDateString();
+        p = p.then(() => {
+          return wx.cloud.callFunction({
+            name: 'getUserInfo',
+            data: {
+              uid: topicList[i].uid
+            }
+          }).then(res => { topicList[i].userInfo = res.result.data[0]});
+        })
+      }
+      p.then(() => { that.setData({ topicList: topicList })});
+    })
 
+
+
+
+    this.setupViews();
     this.setupDataSets();
     this.setupCharts();
-
     if (options) {
       let str = [];
       for (var p in options)
@@ -71,60 +103,10 @@ Page({
           delete options[p]
           options[decodeURIComponent(p)] = decodeURIComponent(value)
         }
-
       this.bindPageParam(options)
     }
     if (this._onLoad) {
       this._onLoad(options);
-    }
-  },
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function() {
-
-    if (this._onReady) {
-      this._onReady();
-    }
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function() {
-
-    if (this._onShow) {
-      this._onShow();
-    }
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function() {
-
-    if (this._onHide) {
-      this._onHide();
-    }
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function() {
-    this.teardownDataSets();
-    this.teardownCharts();
-    if (this._onUnload) {
-      this._onUnload();
-    }
-  },
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function() {
-
-    if (this._onPullDownRefresh) {
-      this._onPullDownRefresh();
     }
   },
 
@@ -133,19 +115,6 @@ Page({
    */
   onReachBottom: function() {
 
-    if (this._onReachBottom) {
-      this._onReachBottom();
-    }
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function() {
-    return {
-      title: '快问快答',
-      path: PageList.page11
-    }
   },
 
   setupViews: function() {
@@ -171,17 +140,14 @@ Page({
     })
     data["component1"] = component1
     WAC.bindProxy(this, component1, "component1")
-
     let picker1 = new ui.WeuiRegionPickerModel({
       id: "picker1",
       title: "地区",
       value: ["广东省", "广州市", "海珠区"],
       styleObject: {}
-
     })
     data["picker1"] = picker1
     WAC.bindProxy(this, picker1, 'picker1')
-
     let scrolltab1 = new ui.ScrollTabFlexModel({
       id: "scrolltab1",
       navData: [{

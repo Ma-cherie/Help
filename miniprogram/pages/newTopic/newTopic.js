@@ -39,10 +39,10 @@ Page({
   submitTopic: function(){
     const that = this;
     // 判断内容是否为空
-    let content = this.data.content;
-    if(!content){
+    let title = this.data.title;
+    if(!title){
       wx.showToast({
-        title: '内容不能为空',
+        title: '标题不能为空',
         icon: 'none'
       });
       return;
@@ -108,7 +108,12 @@ Page({
           uid: uid,
           title: that.data.title,
           content: that.data.content,
-          imageUrl: imgUrl
+          imageUrl: imgUrl, 
+          location: {
+            province: '广东省',
+            city: '广州市',
+            area: '天河区',
+          },
         }
       }).then(res => {
         console.log(res);

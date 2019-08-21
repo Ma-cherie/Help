@@ -1,1 +1,21 @@
 /* miniprogram/pages/topicDetail/topicDetail.wxss */
+.topic-box{
+  
+}
+.user-show{
+  position: relative;
+}
+.user-avatar{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 100rpx;
+  margin-right: 20rpx;
+  display: inline-block;
+}
+.user-name{
+  position: absolute;
+}
+.time-place{
+  position: absolute;
+  top: 50rpx;
+}

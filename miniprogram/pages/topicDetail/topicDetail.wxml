@@ -1,2 +1,13 @@
 <!--miniprogram/pages/topicDetail/topicDetail.wxml-->
-<view class="topic-box"></view>
+<view class="topic-box">
+  <view class="user-show">
+    <image class="user-avatar" mode='aspectFill' src="{{item.userInfo.avatarUrl || '../../resources/svg/user2.svg'}}"></image>
+    <text class="user-name">{{item.userInfo.nickname || "热心网友"}}</text>
+    <text class="time-place">{{item.date}} 发布于 {{item.location.city}}{{item.location.area}}</text>
+  </view>
+  <view class="topic-show">
+    <text class="title"></text>
+    <text class="content"></text>
+  </view>
+</view>
+<view class="comment-box"></view>
