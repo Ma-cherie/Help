@@ -7,7 +7,8 @@ Page({
   data: {
     title: null,
     content: null,
-    photoArr: []
+    photoArr: [],   //上传图片后的本地地址
+    imageUrl: [],   //upload之后的fileID
   },
 
   onTitleChange: function(event) {
@@ -36,6 +37,8 @@ Page({
     })
   },
   submitTopic: function(){
+    const that = this;
+    // 判断内容是否为空
     let content = this.data.content;
     if(!content){
       wx.showToast({
@@ -44,63 +47,77 @@ Page({
       });
       return;
     }
-    let uid = wx.getStorageSync('uid');
-    // wx.cloud.callFunction({
-    //   name: 'askquestion',
-    //   data: {
-    //     uid: uid
-    //   }
-    // }).then(console.log);
-  },
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
+    if(this.data.photoArr.length > 0){
+      uploadImgs().then(imgUrl => {
+        console.log(imgUrl);
+        submit(imgUrl);
+      })
+    }
+    else{
+      submit();
+    }
     
+    // 上传单个图片函数
+    function uploadSingleImg(fileName, photo) {
+      return new Promise((resolve, reject) => {
+        // upload单个图片
+        wx.cloud.uploadFile({
+          cloudPath: `topicImg/${fileName}`,
+          filePath: photo,
+        })
+          .then(res => {
+            resolve(res.fileID);
+          })
+          .catch(err => {
+            console.log("上传单个图片失败", err);
+          })
+      });
+    }
+
+    // 上传图片函数(有可能多个，有可能单个)
+    function uploadImgs(){
+      return new Promise((resolve,reject) => {
+        // 初始化一个无关的promise链
+        var p = Promise.resolve();
+        let photoArr = that.data.photoArr;
+        let imgUrl = that.data.imageUrl;
+        for (let i = 0; i < photoArr.length; i++) {
+          let photo = photoArr[i];
+          let fileNameArr = photo.split('.');
+          let fileName = fileNameArr[fileNameArr.length - 2] + "." + fileNameArr[fileNameArr.length - 1];
+          p = p.then(() => {
+            return uploadSingleImg(fileName, photo).then(singleImgID => {
+              // console.log(singleImgID);
+              return imgUrl.push(singleImgID);
+            });
+          })
+        }
+        p.then(() => { resolve(imgUrl);})
+      })
+    }
+
+    
+    
+    // 提交事件函数
+    function submit(imgUrl){
+      // 提交
+      let uid = wx.getStorageSync('uid');
+      wx.cloud.callFunction({
+        name: 'askquestion',
+        data: {
+          uid: uid,
+          title: that.data.title,
+          content: that.data.content,
+          imageUrl: imgUrl
+        }
+      }).then(res => {
+        console.log(res);
+        wx.navigateBack({});
+      });
+    }
   },
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
 
 
 
