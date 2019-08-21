@@ -12,42 +12,28 @@ const db = cloud.database()
  * 返回：操作结果消息
  */
 exports.main = async (event, context) => {
-  // 用户校验
-  const res = await cloud.callFunction({
-    name: 'auth',
+
+  return await db.collection('User').where({
+    uid: event.uid,
+  })
+  .update({
     data: {
-      uid: event.uid
+      nickname: event.nickname,
+      avatarUrl: event.avatarUrl
     }
   })
-  // 业务逻辑
-  if (res) {
-    try {
-      db.collection('User').where({
-        uid: event.uid,
-      })
-        .update({
-          data: {
-            nickname: event.nickname,
-            avatarUrl: event.avatarUrl
-          }
-        })
-    } catch (err) {
-      console.error('更新用户信息失败')
-      console.error(err)
-      return {
-        msg: '更新失败',
-        success: false
-      }
-    }
-
+  .then(res => {
     return {
       msg: '更新成功',
       success: true
     }
-  } else {
+  })
+  .catch(err => {
+    console.error(err)
     return {
-      msg: '验证用户信息失败',
+      msg: '更新失败',
       success: false
     }
-  }
+  })
+  
 }
